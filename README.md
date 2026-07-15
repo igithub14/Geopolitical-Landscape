@@ -1,0 +1,2 @@
+# Geopolitical-Landscape
+Geopolitical Parameters
