@@ -124,7 +124,7 @@ Geopolitical-Landscape/
 
 ## 📄 License
 
-Data is publicly available from official sources. Dashboard code is available under MIT License.
+Data is publicly available from official sources. Dashboard code is available under Apache License 2.0.
 
 ---
 
