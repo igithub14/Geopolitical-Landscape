@@ -1,0 +1,301 @@
+country_name,year,gdp_per_capita_usd
+France,1975,6616.77
+Germany,1975,6259.21
+Italy,1975,4116.46
+Netherlands,1975,7346.3
+Spain,1975,3207.54
+United Kingdom,1975,4299.75
+France,1976,6792.31
+Germany,1976,6659.17
+Italy,1976,4042.39
+Netherlands,1976,7937.35
+Spain,1976,3276.97
+United Kingdom,1976,4138.17
+France,1977,7458.76
+Germany,1977,7711.1
+Italy,1977,4614.21
+Netherlands,1977,9180.3
+Spain,1977,3625.0
+United Kingdom,1977,4681.44
+France,1978,9166.59
+Germany,1978,9516.78
+Italy,1978,5623.43
+Netherlands,1978,11195.84
+Spain,1978,4353.33
+United Kingdom,1978,5976.94
+France,1979,11062.57
+Germany,1979,11322.35
+Italy,1979,7006.4
+Netherlands,1979,12817.38
+Spain,1979,5766.09
+United Kingdom,1979,7804.76
+France,1980,12565.16
+Germany,1980,12182.78
+Italy,1980,8476.41
+Netherlands,1980,13812.16
+Spain,1980,6204.14
+United Kingdom,1980,10032.06
+France,1981,10955.9
+Germany,1981,10246.48
+Italy,1981,7640.4
+Netherlands,1981,11537.4
+Spain,1981,5367.33
+United Kingdom,1981,9599.31
+France,1982,10359.89
+Germany,1982,9950.06
+Italy,1982,7573.94
+Netherlands,1982,11088.95
+Spain,1982,5156.02
+United Kingdom,1982,9146.08
+France,1983,9862.28
+Germany,1983,9900.49
+Italy,1983,7850.63
+Netherlands,1983,10696.08
+Spain,1983,4475.3
+United Kingdom,1983,8691.52
+France,1984,9311.89
+Germany,1984,9347.29
+Italy,1984,7757.55
+Netherlands,1984,9991.84
+Spain,1984,4486.78
+United Kingdom,1984,8179.19
+France,1985,9657.02
+Germany,1985,9464.12
+Italy,1985,8009.1
+Netherlands,1985,9940.74
+Spain,1985,4696.3
+United Kingdom,1985,8652.22
+France,1986,13430.48
+Germany,1986,13511.15
+Italy,1986,11341.09
+Netherlands,1986,13804.14
+Spain,1986,6508.85
+United Kingdom,1986,10611.11
+France,1987,16175.71
+Germany,1987,16738.61
+Italy,1987,14267.54
+Netherlands,1987,16734.15
+Spain,1987,8233.73
+United Kingdom,1987,13118.59
+France,1988,17549.64
+Germany,1988,17996.98
+Italy,1988,15780.95
+Netherlands,1988,17770.62
+Spain,1988,9696.19
+United Kingdom,1988,15987.17
+France,1989,17547.26
+Germany,1989,17829.46
+Italy,1989,16424.43
+Netherlands,1989,17423.3
+Spain,1989,10674.34
+United Kingdom,1989,16239.28
+France,1990,21586.47
+Germany,1990,22385.68
+Italy,1990,20873.78
+Netherlands,1990,21322.19
+Spain,1990,13795.02
+United Kingdom,1990,19095.47
+France,1991,21500.78
+Germany,1991,23443.34
+Italy,1991,22007.14
+Netherlands,1991,21764.21
+Spain,1991,14801.32
+United Kingdom,1991,19900.73
+France,1992,23615.02
+Germany,1992,26559.85
+Italy,1992,23297.05
+Netherlands,1992,23939.22
+Spain,1992,16100.68
+United Kingdom,1992,20487.17
+France,1993,22238.83
+Germany,1993,25616.65
+Italy,1993,18781.95
+Netherlands,1993,23156.44
+Spain,1993,13330.38
+United Kingdom,1993,18389.02
+France,1994,23359.9
+Germany,1994,27201.96
+Italy,1994,19382.2
+Netherlands,1994,24682.59
+Spain,1994,13405.7
+United Kingdom,1994,19709.24
+France,1995,26791.82
+Germany,1995,31747.24
+Italy,1995,20712.18
+Netherlands,1995,29301.19
+Spain,1995,15460.91
+United Kingdom,1995,23252.62
+France,1996,26757.64
+Germany,1996,30599.79
+Italy,1996,23122.93
+Netherlands,1996,29063.62
+Spain,1996,16100.62
+United Kingdom,1996,24503.38
+France,1997,24169.4
+Germany,1997,27046.96
+Italy,1997,21883.99
+Netherlands,1997,26744.96
+Spain,1997,14722.37
+United Kingdom,1997,26910.14
+France,1998,24869.4
+Germany,1998,27395.94
+Italy,1998,22365.18
+Netherlands,1998,27924.28
+Spain,1998,15382.33
+United Kingdom,1998,28396.35
+France,1999,24576.32
+Germany,1999,26965.49
+Italy,1999,22050.0
+Netherlands,1999,28318.75
+Spain,1999,15707.95
+United Kingdom,1999,28858.01
+France,2000,22340.59
+Germany,2000,23925.86
+Italy,2000,20190.0
+Netherlands,2000,26225.17
+Spain,2000,14743.27
+United Kingdom,2000,28383.88
+France,2001,22331.79
+Germany,2001,23878.36
+Italy,2001,20570.44
+Netherlands,2001,26955.71
+Spain,2001,15368.23
+United Kingdom,2001,28013.87
+France,2002,24144.57
+Germany,2002,25486.59
+Italy,2002,22451.4
+Netherlands,2002,29446.53
+Spain,2002,17111.07
+United Kingdom,2002,30158.7
+France,2003,29479.52
+Germany,2003,30711.1
+Italy,2003,27577.57
+Netherlands,2003,35896.75
+Spain,2003,21522.02
+United Kingdom,2003,34556.77
+France,2004,33644.93
+Germany,2004,34566.74
+Italy,2004,31348.19
+Netherlands,2004,40611.34
+Spain,2004,24925.03
+United Kingdom,2004,40504.41
+France,2005,34696.37
+Germany,2005,35084.44
+Italy,2005,32062.72
+Netherlands,2005,42165.4
+Spain,2005,26450.95
+United Kingdom,2005,42240.25
+France,2006,36431.57
+Germany,2006,36980.33
+Italy,2006,33537.13
+Netherlands,2006,45123.54
+Spain,2006,28421.69
+United Kingdom,2006,44695.16
+France,2007,41486.19
+Germany,2007,42350.92
+Italy,2007,37826.18
+Netherlands,2007,52100.8
+Spain,2007,32652.02
+United Kingdom,2007,50629.08
+France,2008,45464.82
+Germany,2008,46379.16
+Italy,2008,40828.58
+Netherlands,2008,58246.7
+Spain,2008,35603.25
+United Kingdom,2008,47652.4
+France,2009,41728.09
+Germany,2009,42471.89
+Italy,2009,37099.61
+Netherlands,2009,53172.03
+Spain,2009,32279.82
+United Kingdom,2009,39009.37
+France,2010,40694.82
+Germany,2010,42396.97
+Italy,2010,35856.86
+Netherlands,2010,51305.73
+Spain,2010,30658.74
+United Kingdom,2010,39778.32
+France,2011,43929.78
+Germany,2011,47630.98
+Italy,2011,38432.37
+Netherlands,2011,54701.77
+Spain,2011,31824.62
+United Kingdom,2011,42295.93
+France,2012,40863.58
+Germany,2012,44718.02
+Italy,2012,34854.39
+Netherlands,2012,50473.94
+Spain,2012,28456.44
+United Kingdom,2012,42688.33
+France,2013,42669.18
+Germany,2013,47206.84
+Italy,2013,35701.67
+Netherlands,2013,52602.29
+Spain,2013,29228.85
+United Kingdom,2013,43607.66
+France,2014,43148.05
+Germany,2014,48959.6
+Italy,2014,36028.35
+Netherlands,2014,53457.22
+Spain,2014,29707.77
+United Kingdom,2014,47746.98
+France,2015,36702.43
+Germany,2015,41929.75
+Italy,2015,30639.88
+Netherlands,2015,45793.81
+Spain,2015,25982.44
+United Kingdom,2015,45256.04
+France,2016,37024.22
+Germany,2016,42948.94
+Italy,2016,31391.57
+Netherlands,2016,46808.53
+Spain,2016,26755.61
+United Kingdom,2016,41258.54
+France,2017,38687.16
+Germany,2017,45553.93
+Italy,2017,32844.12
+Netherlands,2017,49513.68
+Spain,2017,28381.34
+United Kingdom,2017,40918.05
+France,2018,41418.18
+Germany,2018,48916.17
+Italy,2018,35062.34
+Netherlands,2018,53955.08
+Spain,2018,30602.42
+United Kingdom,2018,43704.32
+France,2019,40408.28
+Germany,2019,47656.2
+Italy,2019,33812.79
+Netherlands,2019,53554.9
+Spain,2019,29786.52
+United Kingdom,2019,43160.68
+France,2020,39169.86
+Germany,2020,47394.87
+Italy,2020,32091.49
+Netherlands,2020,53467.93
+Spain,2020,27233.94
+United Kingdom,2020,40815.13
+France,2021,43725.1
+Germany,2021,52349.25
+Italy,2021,36852.54
+Netherlands,2021,60141.99
+Spain,2021,30799.48
+United Kingdom,2021,47695.65
+France,2022,40988.64
+Germany,2022,50506.52
+Italy,2022,35653.9
+Netherlands,2022,59123.32
+Spain,2022,30319.5
+United Kingdom,2022,47034.78
+France,2023,44700.14
+Germany,2023,54776.77
+Italy,2023,39279.7
+Netherlands,2023,63515.6
+Spain,2023,33493.22
+United Kingdom,2023,49919.69
+France,2024,46103.08
+Germany,2024,56103.73
+Italy,2024,40429.62
+Netherlands,2024,67465.32
+Spain,2024,35326.77
+United Kingdom,2024,53341.31

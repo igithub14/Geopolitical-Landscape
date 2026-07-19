@@ -1,0 +1,251 @@
+country_name,year,gdp_billion_usd
+France,1975,357.32
+Germany,1975,492.43
+Italy,1975,228.22
+Spain,1975,114.7
+United Kingdom,1975,241.76
+France,1976,368.36
+Germany,1976,521.66
+Italy,1976,225.24
+Spain,1976,118.42
+United Kingdom,1976,232.61
+France,1977,406.4
+Germany,1977,602.7
+Italy,1977,258.19
+Spain,1977,132.35
+United Kingdom,1977,263.07
+France,1978,501.72
+Germany,1978,743.18
+Italy,1978,315.78
+Spain,1978,160.48
+United Kingdom,1978,335.88
+France,1979,608.22
+Germany,1979,884.57
+Italy,1979,394.58
+Spain,1979,214.45
+United Kingdom,1979,438.99
+France,1980,694.53
+Germany,1980,953.77
+Italy,1980,478.36
+Spain,1980,232.6
+United Kingdom,1980,564.95
+France,1981,609.18
+Germany,1981,803.4
+Italy,1981,431.7
+Spain,1981,202.66
+United Kingdom,1981,540.77
+France,1982,578.15
+Germany,1982,779.42
+Italy,1982,428.26
+Spain,1982,195.86
+United Kingdom,1982,515.05
+France,1983,553.36
+Germany,1983,773.51
+Italy,1983,444.06
+Spain,1983,170.83
+United Kingdom,1983,489.62
+France,1984,525.03
+Germany,1984,727.77
+Italy,1984,438.9
+Spain,1984,171.98
+United Kingdom,1984,461.49
+France,1985,547.22
+Germany,1985,735.22
+Italy,1985,453.26
+Spain,1985,180.66
+United Kingdom,1985,489.29
+France,1986,764.95
+Germany,1986,1050.09
+Italy,1986,641.86
+Spain,1986,251.14
+United Kingdom,1986,601.45
+France,1987,926.32
+Germany,1987,1302.93
+Italy,1987,807.57
+Spain,1987,318.52
+United Kingdom,1987,745.16
+France,1988,1010.83
+Germany,1988,1406.37
+Italy,1988,893.66
+Spain,1988,375.89
+United Kingdom,1988,910.12
+France,1989,1016.74
+Germany,1989,1404.09
+Italy,1989,930.8
+Spain,1989,414.46
+United Kingdom,1989,926.88
+France,1990,1257.65
+Germany,1990,1778.16
+Italy,1990,1183.95
+Spain,1990,536.18
+United Kingdom,1990,1093.17
+France,1991,1258.96
+Germany,1991,1875.79
+Italy,1991,1249.09
+Spain,1991,576.75
+United Kingdom,1991,1142.8
+France,1992,1389.66
+Germany,1992,2141.38
+Italy,1992,1323.2
+Spain,1992,630.47
+United Kingdom,1992,1179.66
+France,1993,1314.38
+Germany,1993,2078.95
+Italy,1993,1067.41
+Spain,1993,524.7
+United Kingdom,1993,1061.39
+France,1994,1385.82
+Germany,1994,2215.28
+Italy,1994,1101.75
+Spain,1994,530.18
+United Kingdom,1994,1140.49
+France,1995,1595.22
+Germany,1995,2593.05
+Italy,1995,1177.37
+Spain,1995,614.17
+United Kingdom,1995,1349.09
+France,1996,1598.89
+Germany,1996,2506.58
+Italy,1996,1314.78
+Spain,1996,642.25
+United Kingdom,1996,1425.29
+France,1997,1449.39
+Germany,1997,2218.79
+Italy,1997,1244.99
+Spain,1997,589.74
+United Kingdom,1997,1569.32
+France,1998,1496.91
+Germany,1998,2247.76
+Italy,1998,1272.73
+Spain,1998,618.73
+United Kingdom,1998,1660.82
+France,1999,1486.92
+Germany,1999,2213.87
+Italy,1999,1255.0
+Spain,1999,634.39
+United Kingdom,1999,1693.46
+France,2000,1360.96
+Germany,2000,1966.98
+Italy,2000,1149.66
+Spain,2000,598.1
+United Kingdom,2000,1671.6
+France,2001,1370.38
+Germany,2001,1966.38
+Italy,2001,1172.04
+Spain,2001,627.8
+United Kingdom,2001,1656.17
+France,2002,1492.43
+Germany,2002,2102.35
+Italy,2002,1281.75
+Spain,2002,708.94
+United Kingdom,2002,1790.54
+France,2003,1835.1
+Germany,2003,2534.72
+Italy,2003,1582.93
+Spain,2003,907.96
+United Kingdom,2003,2061.23
+France,2004,2109.79
+Germany,2004,2852.32
+Italy,2004,1812.81
+Spain,2004,1069.83
+United Kingdom,2004,2429.77
+France,2005,2192.15
+Germany,2005,2893.39
+Italy,2005,1864.98
+Spain,2005,1154.67
+United Kingdom,2005,2551.36
+France,2006,2317.86
+Germany,2006,3046.31
+Italy,2006,1958.56
+Spain,2006,1261.85
+United Kingdom,2006,2719.56
+France,2007,2655.82
+Germany,2007,3484.06
+Italy,2007,2222.52
+Spain,2007,1476.75
+United Kingdom,2007,3104.7
+France,2008,2926.8
+Germany,2008,3808.2
+Italy,2008,2417.51
+Spain,2008,1636.12
+United Kingdom,2008,2945.25
+France,2009,2700.08
+Germany,2009,3478.55
+Italy,2009,2209.48
+Spain,2009,1496.59
+United Kingdom,2009,2429.36
+France,2010,2646.23
+Germany,2010,3467.09
+Italy,2010,2144.94
+Spain,2010,1427.99
+United Kingdom,2010,2496.74
+France,2011,2870.41
+Germany,2011,3823.58
+Italy,2011,2306.97
+Spain,2011,1487.57
+United Kingdom,2011,2675.59
+France,2012,2683.01
+Germany,2012,3596.48
+Italy,2012,2097.93
+Spain,2012,1330.99
+United Kingdom,2012,2719.72
+France,2013,2816.08
+Germany,2013,3807.02
+Italy,2013,2153.23
+Spain,2013,1362.19
+United Kingdom,2013,2796.91
+France,2014,2861.24
+Germany,2014,3964.87
+Italy,2014,2173.26
+Spain,2014,1380.24
+United Kingdom,2014,3085.36
+France,2015,2442.48
+Germany,2015,3425.1
+Italy,2015,1845.43
+Spain,2015,1206.16
+United Kingdom,2015,2945.58
+France,2016,2470.41
+Germany,2016,3536.79
+Italy,2016,1887.11
+Spain,2016,1243.02
+United Kingdom,2016,2706.81
+France,2017,2588.87
+Germany,2017,3765.35
+Italy,2017,1970.72
+Spain,2017,1321.75
+United Kingdom,2017,2699.12
+France,2018,2781.58
+Germany,2018,4055.43
+Italy,2018,2099.44
+Spain,2018,1431.64
+United Kingdom,2018,2897.03
+France,2019,2722.79
+Germany,2019,3959.89
+Italy,2019,2019.61
+Spain,2019,1403.5
+United Kingdom,2019,2875.71
+France,2020,2647.93
+Germany,2020,3941.4
+Italy,2020,1907.48
+Spain,2020,1289.78
+United Kingdom,2020,2724.0
+France,2021,2966.43
+Germany,2021,4355.25
+Italy,2021,2179.21
+Spain,2021,1461.24
+United Kingdom,2021,3194.56
+France,2022,2794.79
+Germany,2022,4201.02
+Italy,2022,2104.07
+Spain,2022,1448.85
+United Kingdom,2022,3181.24
+France,2023,3056.25
+Germany,2023,4562.21
+Italy,2023,2316.88
+Spain,2023,1619.48
+United Kingdom,2023,3420.8
+France,2024,3160.44
+Germany,2024,4685.59
+Italy,2024,2383.44
+Spain,2024,1725.67
+United Kingdom,2024,3695.54
