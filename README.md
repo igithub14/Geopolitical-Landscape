@@ -2,6 +2,10 @@
 
 Interactive data dashboards analyzing Italian political stability, European economic trends, and industrial transformation.
 
+[![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=Databricks&logoColor=white)](https://www.databricks.com/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/)
+
 ---
 
 ## Live Dashboards
@@ -113,7 +117,8 @@ Geopolitical-Landscape/
 
 **Cristiano Mombello**
 
-[LinkedIn](https://www.linkedin.com/in/cristiano-mombello) | [GitHub](https://github.com/igithub14)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cristiano-mombello)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/igithub14)
 
 ---
 
