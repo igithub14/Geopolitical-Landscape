@@ -31,11 +31,6 @@ Structural transformation analysis from OECD STAN Database showing Manufacturing
 #### Section 5: Diplomatic Presence & Missions
 Analysis of Italian diplomatic network and international relations. Mapping of embassy presence, consular missions, and multilateral organization participation. Section under active development.
 
-### 2. Political Power Structure & Networks
-[View Dashboard](https://dbc-dae8232b-70b7.cloud.databricks.com/sql/dashboards/01f1841dddfa162f8b1f9931d4b33db7)
-
-Interactive hierarchical visualization of Italian institutional architecture using custom Vega-Lite specifications. Features organizational chart of constitutional bodies (President, Parliament, Government), institutional dependencies with separation of powers, and custom SVG-based node styling. Demonstrates advanced dashboard techniques including recursive hierarchy layout algorithms, dynamic edge rendering, and data-driven positioning logic.
-
 ---
 
 ## Streamlit Application
