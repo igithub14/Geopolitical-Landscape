@@ -14,7 +14,7 @@ Interactive data dashboards analyzing Italian political stability, European econ
 ### 1. Governance & Economic Indicators
 [View Dashboard](https://dbc-dae8232b-70b7.cloud.databricks.com/sql/dashboards/01f1803cd8b216009e6e19ecc12df942)
 
-Comprehensive multi-page dashboard covering 78 years of Italian political history, European economic trends, and industrial transformation. Four main analytical sections:
+Comprehensive multi-page dashboard covering 78 years of Italian political history, European economic trends, and industrial transformation. Five main analytical sections:
 
 #### Section 1: Italian Government Stability (1946-2024)
 Historical timeline of Italian government durations with custom Vega visualization. Features real-time Meloni government counter tracking progress toward Berlusconi's record (1,801 days), dynamic leader search with aggregated tenure metrics, and data quality annotations distinguishing verified vs. estimated periods.
@@ -27,6 +27,9 @@ Interactive hierarchical visualization of Italian institutional architecture usi
 
 #### Section 4: Industrial Composition & Evolution (1985-2024)
 Structural transformation analysis from OECD STAN Database showing Manufacturing decline (56.4% → 39.4%, -17pp), Professional Services emergence (0% → 16.7% since 1992), and Tourism stability (21-23%). Line chart with 5 macro-sectors tracking 40 years of economic reallocation, complemented by 2024 snapshot pie chart.
+
+#### Section 5: Diplomatic Presence & Missions
+Analysis of Italian diplomatic network and international relations. Mapping of embassy presence, consular missions, and multilateral organization participation. Section under active development.
 
 ### 2. Political Power Structure & Networks
 [View Dashboard](https://dbc-dae8232b-70b7.cloud.databricks.com/sql/dashboards/01f1841dddfa162f8b1f9931d4b33db7)
