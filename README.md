@@ -8,49 +8,25 @@ Interactive data dashboards analyzing Italian political stability, European econ
 
 ---
 
-## Live Dashboards
+## Dashboards
 
-### Governance & Economic Indicators Dashboard
-
+### 1. Governance & Economic Indicators
 [View Dashboard](https://dbc-dae8232b-70b7.cloud.databricks.com/sql/dashboards/01f1803cd8b216009e6e19ecc12df942)
 
-Interactive Databricks AI/BI Dashboard featuring:
+Analysis of Italian government stability (1946-2024), world leaders mandate tracking (48+ leaders), European GDP trends (1975-2024, 6 economies), and industrial composition evolution (1985-2024). Features real-time counters, dynamic filters, and historical trend visualization.
 
-**Italian Government Duration Analysis (1946-2024)**
-- Historical government stability metrics
-- Prime Minister tenure comparison
-- Real-time Meloni government tracking
+### 2. Political Power Structure & Networks
+[View Dashboard](https://dbc-dae8232b-70b7.cloud.databricks.com/sql/dashboards/01f1841dddfa162f8b1f9931d4b33db7)
 
-**World Leaders Mandate Comparison**
-- 48+ world leaders tracked
-- Dynamic filters for custom analysis
-- Days remaining calculations
-
-**European GDP Trends (1975-2024)**
-- 6 major European economies
-- Total GDP and Per Capita analysis
-- Historical trend visualization
-
-**Industrial Composition Evolution (1985-2024)**
-- OECD sectoral data analysis
-- Manufacturing vs Services transformation
-- Tourism sector tracking
+Interactive network visualization of institutional hierarchies and political relationships. Custom Vega force-directed graphs showing command chains, ministerial structures, and leader-collaborator connections. Dataset under development.
 
 ---
 
-## Streamlit Web Application
+## Streamlit Application
 
-Interactive multi-page dashboard with responsive design.
+[View Code](./streamlit-governance-dashboard/)
 
-[View Streamlit App Code](./streamlit-governance-dashboard/)
-
-**Features:**
-- Government Stability Metrics
-- Industrial Composition Charts
-- European GDP Comparison
-- Interactive filters and dynamic visualizations
-
-Ready for deployment on [Streamlit Cloud](https://share.streamlit.io)
+Multi-page dashboard with government stability metrics, industrial composition charts, European GDP comparison, and dynamic visualizations. Ready for deployment on [Streamlit Cloud](https://share.streamlit.io).
 
 ---
 
@@ -88,28 +64,19 @@ Geopolitical-Landscape/
 
 ## Key Insights
 
-**Italian Political Stability**
-- Analysis of 78 years of government history (1946-2024)
-- Average government duration significantly shorter than EU peers
-- Current Meloni government tracking vs historical benchmarks
+**Italian Political Stability**: 78 years of government history (1946-2024). Average duration significantly shorter than EU peers. Current Meloni government tracked against historical benchmarks.
 
-**Economic Transformation**
-- Manufacturing decline: 56.4% to 39.4% (-17pp, 1985-2024)
-- Professional Services emergence: 0% to 16.7% (since 1992)
-- Tourism stability: approximately 22-23% throughout the period
+**Economic Transformation**: Manufacturing decline from 56.4% to 39.4% (-17pp, 1985-2024). Professional Services emergence from 0% to 16.7% (since 1992). Tourism stability at 22-23% throughout period.
 
-**European GDP Analysis**
-- 50-year GDP trends for major economies
-- Post-2008 divergence patterns
-- Per capita comparison across 6 countries
+**European GDP**: 50-year trends for major economies. Post-2008 divergence patterns. Per capita comparison across 6 countries.
 
 ---
 
 ## Data Sources
 
-- [OECD STAN Database](https://data-explorer.oecd.org/) - Industrial composition and sectoral analysis
-- [World Bank Open Data](https://data.worldbank.org/) - GDP indicators and economic metrics
-- Italian Government Official Records - Political stability data
+[OECD STAN Database](https://data-explorer.oecd.org/) - Industrial composition and sectoral analysis  
+[World Bank Open Data](https://data.worldbank.org/) - GDP indicators and economic metrics  
+Italian Government Official Records - Political stability data
 
 ---
 
