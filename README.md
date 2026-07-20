@@ -57,19 +57,48 @@ Multi-page dashboard with government stability metrics, industrial composition c
 
 ```
 Geopolitical-Landscape/
-├── streamlit-governance-dashboard/    # Streamlit web application
-│   ├── app.py                        # Main application
-│   ├── data/                         # CSV datasets
-│   │   ├── italian_governments.csv
-│   │   ├── sectoral_shares_oecd.csv
-│   │   ├── gdp_total.csv
-│   │   └── gdp_per_capita.csv
-│   ├── requirements.txt
-│   └── README.md
-├── Eurostat_GDP_Volume_Loader.ipynb  # Data ingestion notebook
-├── GovernmentDurationMetrics.ipynb   # Analysis notebook
-└── World_Bank_GDP_Data_Loader.py     # ETL script
+├── README.md                                    # Project documentation
+├── LICENSE                                      # Apache 2.0 License
+├── .gitignore                                   # Git ignore rules
+│
+├── dashboards/                                  # Databricks Dashboards (published)
+│   ├── Governance & Economic Indicators         # ID: 01f1803cd8b216009e6e19ecc12df942
+│   │   ├── Section 1: Government Stability      # Italian cabinets 1946-2024
+│   │   ├── Section 2: Political Networks        # Institutional hierarchy (Vega-Lite)
+│   │   ├── Section 3: European GDP Trends       # 6 economies, 50 years
+│   │   ├── Section 4: Industrial Composition    # OECD sectoral data
+│   │   └── Section 5: Diplomatic Presence       # Under development
+│   └── (Additional dashboards...)               
+│
+├── notebooks/                                   # ETL & Analysis Notebooks
+│   ├── World_Bank_GDP_Data_Loader.py           # GDP data ingestion (World Bank API)
+│   ├── Eurostat_GDP_Volume_Loader.ipynb        # GDP volume indices (Eurostat API)
+│   └── GovernmentDurationMetrics.ipynb         # Italian government duration analysis
+│
+├── unity_catalog/                               # Data Catalog Tables
+│   └── geopolitics_data_catalog.processed/     # Processed/curated layer
+│       ├── italian_government_duration         # Government stability metrics
+│       ├── world_gdp_total                     # GDP absolute values
+│       ├── world_gdp_per_capita                # GDP per capita
+│       ├── sectoral_shares_oecd                # Industrial composition
+│       └── (Additional tables...)              
+│
+└── streamlit-governance-dashboard/             # Streamlit Web Application
+    ├── app.py                                  # Main Streamlit app
+    ├── requirements.txt                        # Python dependencies
+    ├── README.md                               # App documentation
+    └── data/                                   # Local CSV datasets (for deployment)
+        ├── italian_governments.csv
+        ├── sectoral_shares_oecd.csv
+        ├── gdp_total.csv
+        └── gdp_per_capita.csv
 ```
+
+**Architecture Notes**:
+* **ETL Flow**: Notebooks → Unity Catalog → Databricks Dashboards
+* **Data Lineage**: External APIs (World Bank, Eurostat, OECD) → Bronze (raw) → Processed (curated) → Dashboard Datasets
+* **Streamlit App**: Standalone deployment using exported CSV snapshots for portability
+* **Dashboard Credentials**: Individual data permissions (row-level security enabled)
 
 ---
 
