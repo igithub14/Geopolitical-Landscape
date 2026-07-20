@@ -4,6 +4,7 @@ Interactive data dashboards analyzing Italian political stability, European econ
 
 [![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=Databricks&logoColor=white)](https://www.databricks.com/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Vega-Lite](https://img.shields.io/badge/Vega--Lite-5-F46D43?style=for-the-badge)](https://vega.github.io/vega-lite/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/)
 
 ---
@@ -18,7 +19,7 @@ Analysis of Italian government stability (1946-2024), world leaders mandate trac
 ### 2. Political Power Structure & Networks
 [View Dashboard](https://dbc-dae8232b-70b7.cloud.databricks.com/sql/dashboards/01f1841dddfa162f8b1f9931d4b33db7)
 
-Interactive network visualization of institutional hierarchies and political relationships. Custom Vega force-directed graphs showing command chains, ministerial structures, and leader-collaborator connections. Dataset under development.
+Interactive hierarchical visualization of Italian institutional architecture using custom Vega-Lite specifications. Features organizational chart of constitutional bodies (President, Parliament, Government), institutional dependencies with separation of powers, and custom SVG-based node styling. Demonstrates advanced dashboard techniques including recursive hierarchy layout algorithms, dynamic edge rendering, and data-driven positioning logic.
 
 ---
 
@@ -36,7 +37,7 @@ Multi-page dashboard with government stability metrics, industrial composition c
 |----------|-------------|
 | Data Platform | Databricks, Unity Catalog, Delta Lake |
 | Data Processing | Apache Spark, PySpark, Spark SQL |
-| Visualization | Databricks Dashboards, Streamlit, Plotly |
+| Visualization | Databricks Dashboards, Vega-Lite, Streamlit, Plotly |
 | Data Sources | OECD STAN Database, World Bank API, Italian Government Records |
 | Version Control | Git, GitHub |
 
