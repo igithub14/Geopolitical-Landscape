@@ -210,7 +210,7 @@ View on GitHub:
 
 ### Failure Email (If Error Occurs)
 
-**Subject**: 🚨 Git Backup FAILED - [Date]
+**Subject**: Git Backup FAILED - [Date]
 
 **Body**:
 ```
@@ -219,8 +219,8 @@ Failed to [operation]:
 Error:
 [error details]
 
-⚠️ Manual intervention may be required.
-💡 [troubleshooting suggestions]
+Manual intervention may be required.
+[troubleshooting suggestions]
 ```
 
 ### No Changes Email (If Repository Clean)
@@ -268,7 +268,7 @@ Branch: main
 
 ---
 
-## 🚨 Troubleshooting Guide
+## Troubleshooting Guide
 
 ### Problem: No Email Received
 
