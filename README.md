@@ -73,7 +73,11 @@ Geopolitical-Landscape/
 ├── notebooks/                                   # ETL & Analysis Notebooks
 │   ├── World_Bank_GDP_Data_Loader.py           # GDP data ingestion (World Bank API)
 │   ├── Eurostat_GDP_Volume_Loader.ipynb        # GDP volume indices (Eurostat API)
-│   └── GovernmentDurationMetrics.ipynb         # Italian government duration analysis
+│   ├── GovernmentDurationMetrics.ipynb         # Italian government duration analysis
+│   └── Political_Network_Data_Loader.ipynb     # Political network relationships data
+│
+├── automation/                                  # Scheduled Automation Scripts
+│   └── git_daily_safety_backup.py              # Daily automated Git commit & push (23:00)
 │
 ├── unity_catalog/                               # Data Catalog Tables
 │   └── geopolitics_data_catalog.processed/     # Processed/curated layer
@@ -99,6 +103,35 @@ Geopolitical-Landscape/
 * **Data Lineage**: External APIs (World Bank, Eurostat, OECD) → Bronze (raw) → Processed (curated) → Dashboard Datasets
 * **Streamlit App**: Standalone deployment using exported CSV snapshots for portability
 * **Dashboard Credentials**: Individual data permissions (row-level security enabled)
+
+---
+
+## 🛡️ Automated Backup System
+
+**Daily Safety Backup** - Automated Git commit and push at 23:00 (Europe/Rome)
+
+### Features
+* **Automated Commit**: All changes committed daily with timestamped message
+* **GitHub Push**: Automatic push to remote repository
+* **Email Notifications**: Success/failure reports sent to cristiano.mombello@gmail.com
+* **Error Handling**: Comprehensive error detection and reporting
+* **Disaster Recovery**: Ensures all work backed up daily to GitHub
+
+### Schedule
+* **Frequency**: Daily
+* **Time**: 23:00 (11:00 PM) Europe/Rome timezone
+* **Script**: `git_daily_safety_backup.py`
+* **Execution**: Databricks Job (automated)
+
+### Monitoring
+* Email notifications for every run (success or failure)
+* Job run history in Databricks Workflows
+* GitHub commit log: [View Commits](https://github.com/igithub14/Geopolitical-Landscape/commits/main)
+
+**Benefits**:
+* Zero data loss risk - maximum 24h recovery window
+* Automated safety net for all project work
+* Peace of mind for continuous development
 
 ---
 
