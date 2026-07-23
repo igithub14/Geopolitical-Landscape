@@ -185,7 +185,7 @@ After setup, verify the following:
 
 ---
 
-## 📧 Expected Email Notifications
+## Expected Email Notifications
 
 ### Success Email (Daily at ~23:01)
 
@@ -234,7 +234,7 @@ Repository is clean - no changes to commit.
 Status: Up to date with remote
 Branch: main
 
-ℹ️ No action required - all files already backed up.
+No action required - all files already backed up.
 ```
 
 ---
@@ -343,11 +343,3 @@ The backup system is working correctly when:
 ✅ Job runs visible in Databricks Workflows (success status)
 
 ✅ All project work backed up within 24 hours
-
----
-
-**Setup Complete!**
-
-Your daily Git safety backup is now configured and will run automatically every day at 23:00.
-
-You'll receive email notifications for every run, ensuring peace of mind that all work is safely backed up to GitHub.
