@@ -318,7 +318,7 @@ Branch: main
 
 ---
 
-## 📞 Support
+## Support
 
 **Script Location**: `/Users/cristiano.mombello@gmail.com/Geopolitical_Landscape/git_daily_safety_backup.py`
 
@@ -330,7 +330,7 @@ Branch: main
 
 ---
 
-## 🎯 Success Criteria
+## Success Criteria
 
 The backup system is working correctly when:
 
@@ -346,7 +346,7 @@ The backup system is working correctly when:
 
 ---
 
-**Setup Complete! 🎉**
+**Setup Complete!**
 
 Your daily Git safety backup is now configured and will run automatically every day at 23:00.
 
