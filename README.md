@@ -82,7 +82,7 @@ Geopolitical-Landscape/
 │   │                                            # - Push to GitHub (main branch)
 │   │                                            # - Email notifications (success/failure)
 │   │                                            # - Runs as Databricks Job
-│   └── BACKUP_SETUP_INSTRUCTIONS.md             # Complete setup guide for backup job
+│   └── BACKUP_SETUP_INSTRUCTIONS.md             # Notifications description for backup job
 │
 ├── unity_catalog/                               # Data Catalog Tables
 │   └── geopolitics_data_catalog.processed/      # Processed/curated layer
