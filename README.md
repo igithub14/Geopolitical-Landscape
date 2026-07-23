@@ -71,32 +71,32 @@ Geopolitical-Landscape/
 │   └── (Additional dashboards...)               
 │
 ├── notebooks/                                   # ETL & Analysis Notebooks
-│   ├── World_Bank_GDP_Data_Loader.py           # GDP data ingestion (World Bank API)
-│   ├── Eurostat_GDP_Volume_Loader.ipynb        # GDP volume indices (Eurostat API)
-│   ├── GovernmentDurationMetrics.ipynb         # Italian government duration analysis
-│   └── Political_Network_Data_Loader.ipynb     # Political network relationships data
+│   ├── World_Bank_GDP_Data_Loader.py            # GDP data ingestion (World Bank API)
+│   ├── Eurostat_GDP_Volume_Loader.ipynb         # GDP volume indices (Eurostat API)
+│   ├── GovernmentDurationMetrics.ipynb          # Italian government duration analysis
+│   └── Political_Network_Data_Loader.ipynb      # Political network relationships data
 │
 ├── automation/                                  # Scheduled Automation Scripts
-│   ├── git_daily_safety_backup.py              # 🛡️ Daily safety backup (23:00 Europe/Rome)
+│   ├── git_daily_safety_backup.py               # Daily safety backup (23:00 Europe/Rome)
 │   │                                            # - Auto-commit all changes with timestamp
 │   │                                            # - Push to GitHub (main branch)
 │   │                                            # - Email notifications (success/failure)
 │   │                                            # - Runs as Databricks Job
-│   └── BACKUP_SETUP_INSTRUCTIONS.md            # Complete setup guide for backup job
+│   └── BACKUP_SETUP_INSTRUCTIONS.md             # Complete setup guide for backup job
 │
 ├── unity_catalog/                               # Data Catalog Tables
-│   └── geopolitics_data_catalog.processed/     # Processed/curated layer
-│       ├── italian_government_duration         # Government stability metrics
-│       ├── world_gdp_total                     # GDP absolute values
-│       ├── world_gdp_per_capita                # GDP per capita
-│       ├── sectoral_shares_oecd                # Industrial composition
+│   └── geopolitics_data_catalog.processed/      # Processed/curated layer
+│       ├── italian_government_duration          # Government stability metrics
+│       ├── world_gdp_total                      # GDP absolute values
+│       ├── world_gdp_per_capita                 # GDP per capita
+│       ├── sectoral_shares_oecd                 # Industrial composition
 │       └── (Additional tables...)              
 │
-└── streamlit-governance-dashboard/             # Streamlit Web Application
-    ├── app.py                                  # Main Streamlit app
-    ├── requirements.txt                        # Python dependencies
-    ├── README.md                               # App documentation
-    └── data/                                   # Local CSV datasets (for deployment)
+└── streamlit-governance-dashboard/              # Streamlit Web Application
+    ├── app.py                                   # Main Streamlit app
+    ├── requirements.txt                         # Python dependencies
+    ├── README.md                                # App documentation
+    └── data/                                    # Local CSV datasets (for deployment)
         ├── italian_governments.csv
         ├── sectoral_shares_oecd.csv
         ├── gdp_total.csv

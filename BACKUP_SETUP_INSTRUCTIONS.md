@@ -1,4 +1,4 @@
-# 🛡️ Git Daily Safety Backup - Setup Instructions
+#  Git Daily Safety Backup - Setup Instructions
 
 **Script**: `git_daily_safety_backup.py`
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 📋 Quick Setup Checklist
+##  Quick Setup Checklist
 
 - [ ] Create Databricks Job
 - [ ] Configure notebook task
@@ -19,7 +19,7 @@
 
 ---
 
-## 🔧 Detailed Setup Steps
+##  Detailed Setup Steps
 
 ### Step 1: Navigate to Workflows
 
@@ -195,16 +195,16 @@ After setup, verify the following:
 ```
 ✅ Git backup completed successfully!
 
-📊 Backup Summary:
+Backup Summary:
   • Files Changed: [count]
   • Commit Hash: [hash]
   • Branch: main
   • Timestamp: [timestamp]
 
-📝 Changed Files (first 10):
+Changed Files (first 10):
   [list of files]
 
-🔗 View on GitHub:
+View on GitHub:
   https://github.com/igithub14/Geopolitical-Landscape/commits/main
 ```
 
@@ -239,7 +239,7 @@ Branch: main
 
 ---
 
-## 🔍 Monitoring & Maintenance
+## Monitoring & Maintenance
 
 ### Daily Monitoring
 
