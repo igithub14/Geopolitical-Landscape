@@ -77,7 +77,12 @@ Geopolitical-Landscape/
 │   └── Political_Network_Data_Loader.ipynb     # Political network relationships data
 │
 ├── automation/                                  # Scheduled Automation Scripts
-│   └── git_daily_safety_backup.py              # Daily automated Git commit & push (23:00)
+│   ├── git_daily_safety_backup.py              # 🛡️ Daily safety backup (23:00 Europe/Rome)
+│   │                                            # - Auto-commit all changes with timestamp
+│   │                                            # - Push to GitHub (main branch)
+│   │                                            # - Email notifications (success/failure)
+│   │                                            # - Runs as Databricks Job
+│   └── BACKUP_SETUP_INSTRUCTIONS.md            # Complete setup guide for backup job
 │
 ├── unity_catalog/                               # Data Catalog Tables
 │   └── geopolitics_data_catalog.processed/     # Processed/curated layer
