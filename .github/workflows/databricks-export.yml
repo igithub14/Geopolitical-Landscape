@@ -1,0 +1,45 @@
+name: Export Databricks dashboards and publish to GitHub Pages
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'   # every hour
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  export-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Export dashboards from Databricks
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+          DATABRICKS_DASHBOARD_URLS: ${{ secrets.DATABRICKS_DASHBOARD_URLS }}
+        run: |
+          mkdir -p ./docs
+          python .github/scripts/export_dashboards.py --out ./docs
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
