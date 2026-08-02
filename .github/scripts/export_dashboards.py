@@ -1,48 +1,140 @@
 #!/usr/bin/env python3
+# .github/scripts/export_dashboards.py
+# Produce snapshot statici HTML delle dashboard Databricks in:
+#   .github/scripts/exports/
+# Usa le variabili d'ambiente:
+#   DATABRICKS_HOST, DATABRICKS_TOKEN, DATABRICKS_DASHBOARD_IDS
+
 import os
-from pathlib import Path
 import requests
-OUTPUT_DIR = Path(".github/scripts/exports")
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-def get_env(name: str, default: str | None = None) -> str:
-    value = os.getenv(name, default)
-    if value is None or str(value).strip() == "":
-        raise SystemExit(f"Missing required environment variable: {name}")
-    return str(value).strip()
-def fetch_dashboard_export(host: str, token: str, dashboard_id: str) -> bytes:
-    url = f"{host.rstrip('/')}/api/2.0/preview/sql/dashboards/export"
-    headers = {"Authorization": f"Bearer {token}", "Accept": "text/html"}
-    params = {"dashboard_id": dashboard_id, "format": "HTML"}
-    response = requests.get(url, headers=headers, params=params, timeout=60)
-    response.raise_for_status()
-    return response.content
-def generate_index(output_dir: Path) -> None:
-    files = sorted(output_dir.glob("dashboard-*.html"))
-    index_path = output_dir / "index.html"
-    with index_path.open("w", encoding="utf-8") as f:
-        f.write("<!doctype html>\\n<html lang=\\\"en\\\">\\n<head>\\n<meta charset=\\\"utf-8\\\">\\n")
-        f.write("<meta name=\\\"viewport\\\" content=\\\"width=device-width,initial-scale=1\\\">\\n")
-        f.write("<title>Exported Dashboards</title>\\n</head>\\n<body>\\n")
-        f.write("<h1>Exported Dashboards</h1>\\n<ul>\\n")
-        for p in files:
-            name = p.name
-            f.write(f'  <li><a href=\"{name}\">{name}</a></li>\\\\n')
-        f.write("</ul>\\n</body>\\n</html>\\n")
-    print(f"Index generated: {index_path}")
-def main() -> None:
-    host = get_env("DATABRICKS_HOST")
-    token = get_env("DATABRICKS_TOKEN")
-    dashboard_ids = get_env("DATABRICKS_DASHBOARD_IDS")
-    for raw_id in str(dashboard_ids).split(","):
-        dashboard_id = raw_id.strip()
-        if not dashboard_id:
+import time
+from pathlib import Path
+from urllib.parse import urljoin
+
+EXPORT_DIR = Path(".github/scripts/exports")
+EXPORT_DIR.mkdir(parents=True, exist_ok=True)
+
+DATABRICKS_HOST = os.environ.get("DATABRICKS_HOST", "").rstrip("/")
+DATABRICKS_TOKEN = os.environ.get("DATABRICKS_TOKEN", "")
+DASHBOARD_IDS = os.environ.get("DATABRICKS_DASHBOARD_IDS", "")
+
+if not DATABRICKS_HOST or not DATABRICKS_TOKEN or not DASHBOARD_IDS:
+    print("Missing one of required env vars: DATABRICKS_HOST, DATABRICKS_TOKEN, DATABRICKS_DASHBOARD_IDS")
+    raise SystemExit(1)
+
+headers = {
+    "Authorization": f"Bearer {DATABRICKS_TOKEN}",
+    "Accept": "text/html, */*"
+}
+
+# Candidate endpoints to try (some Databricks instances expose different paths)
+CANDIDATES = [
+    "/api/2.0/preview/sql/dashboards/{id}/export",
+    "/api/2.0/sql/dashboards/{id}/export",
+    "/api/2.0/preview/sql/dashboards/export",
+    "/api/2.0/preview/sql/dashboards/{id}",
+]
+
+def try_export(dashboard_id):
+    for path in CANDIDATES:
+        url = DATABRICKS_HOST + path.format(id=dashboard_id)
+        params = {}
+        if "export" in path:
+            params["format"] = "HTML"
+        try:
+            print(f"Trying {url} params={params} ...", flush=True)
+            resp = requests.get(url, headers=headers, params=params, timeout=30)
+        except Exception as e:
+            print(f"Request error for {url}: {e}", flush=True)
+            resp = None
+        if resp is None:
             continue
-        print(f"Exporting dashboard {dashboard_id}...")
-        output = fetch_dashboard_export(host, token, dashboard_id)
-        path = OUTPUT_DIR / f"dashboard-{dashboard_id}.html"
-        path.write_bytes(output)
-        print(f"Saved: {path}")
-    generate_index(OUTPUT_DIR)
-    print(f"Export complete. Files written to: {OUTPUT_DIR}")
+        status = resp.status_code
+        ctype = resp.headers.get("content-type", "")
+        text = resp.text or ""
+        if status == 200 and ("html" in ctype.lower() or text.strip().startswith("<")):
+            print(f"Success: got HTML from {url} (status {status}, content-type: {ctype})", flush=True)
+            return resp.text
+        else:
+            print(f"Not HTML or non-200 from {url}: status {status}, content-type {ctype}", flush=True)
+            time.sleep(0.5)
+    return None
+
+def write_file(path: Path, content: str):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+def make_index(entries):
+    # entries: list of (id, title, filename, ok, msg)
+    lines = [
+        "<!doctype html>",
+        "<html lang='en'>",
+        "<head>",
+        "  <meta charset='utf-8'/>",
+        "  <meta name='viewport' content='width=device-width,initial-scale=1'/>",
+        "  <title>Databricks Dashboards (static snapshots)</title>",
+        "  <style>",
+        "    body{font-family:Arial,Helvetica,sans-serif;padding:18px}",
+        "    .dash{margin-bottom:40px;border:1px solid #ddd;padding:8px}",
+        "    iframe{width:100%;height:800px;border:0}",
+        "    .failed{color:#a00;background:#fee;padding:8px}",
+        "  </style>",
+        "</head>",
+        "<body>",
+        "  <h1>Databricks Dashboards (static snapshots)</h1>",
+        "  <p>Generated by workflow at build time. Each dashboard is embedded below.</p>",
+    ]
+    for dash_id, title, filename, ok, msg in entries:
+        lines.append(f"<section class='dash'>")
+        lines.append(f"  <h2>{title} — {dash_id}</h2>")
+        if ok:
+            lines.append(f"  <iframe src='./{filename}' loading='lazy'></iframe>")
+            lines.append(f"  <p><small>Embedded snapshot from export.</small></p>")
+        else:
+            lines.append(f"  <div class='failed'><strong>Export failed:</strong> {msg}</div>")
+            dashboard_url = f"{DATABRICKS_HOST}/sql/dashboards/{dash_id}"
+            lines.append(f"  <p><a href='{dashboard_url}' target='_blank' rel='noopener'>Open dashboard in Databricks (requires auth)</a></p>")
+        lines.append("</section>")
+
+    lines.append("</body></html>")
+    return "\n".join(lines)
+
+def sanitize_title(html_text):
+    import re
+    m = re.search(r"<title>(.*?)</title>", html_text, re.I|re.S)
+    if m:
+        return m.group(1).strip()
+    m2 = re.search(r"<h1[^>]*>(.*?)</h1>", html_text, re.I|re.S)
+    if m2:
+        return m2.group(1).strip()
+    return None
+
+def main():
+    ids = [s.strip() for s in DASHBOARD_IDS.split(",") if s.strip()]
+    entries = []
+    for dash_id in ids:
+        print(f"=== Exporting dashboard {dash_id} ===", flush=True)
+        content = try_export(dash_id)
+        filename = f"{dash_id}.html"
+        target = EXPORT_DIR / filename
+        if content:
+            title = sanitize_title(content) or f"Dashboard {dash_id}"
+            write_file(target, content)
+            entries.append((dash_id, title, filename, True, "OK"))
+            print(f"Wrote {target} ({len(content)} bytes)", flush=True)
+        else:
+            msg = "No HTML returned from candidate endpoints"
+            print(f"Failed to export dashboard {dash_id}: {msg}", flush=True)
+            placeholder = f"<html><body><h1>Export failed for {dash_id}</h1><p>{msg}</p></body></html>"
+            write_file(target, placeholder)
+            entries.append((dash_id, f"Dashboard {dash_id}", filename, False, msg))
+
+    # build index in the exports folder
+    index_html = make_index(entries)
+    write_file(EXPORT_DIR / "index.html", index_html)
+    print("Generated index.html in exports folder.", flush=True)
+    print("Done.", flush=True)
+
 if __name__ == "__main__":
     main()
