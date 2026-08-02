@@ -20,15 +20,15 @@ def generate_index(output_dir: Path) -> None:
     files = sorted(output_dir.glob("dashboard-*.html"))
     index_path = output_dir / "index.html"
     with index_path.open("w", encoding="utf-8") as f:
-        f.write("<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n")
-        f.write("<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n")
-        f.write("<title>Exported Dashboards</title>\n</head>\n<body>\n")
-        f.write("<h1>Exported Dashboards</h1>\n<ul>\n")
+        f.write("<!doctype html>\\n<html lang=\\\"en\\\">\\n<head>\\n<meta charset=\\\"utf-8\\\">\\n")
+        f.write("<meta name=\\\"viewport\\\" content=\\\"width=device-width,initial-scale=1\\\">\\n")
+        f.write("<title>Exported Dashboards</title>\\n</head>\\n<body>\\n")
+        f.write("<h1>Exported Dashboards</h1>\\n<ul>\\n")
         for p in files:
             name = p.name
-            f.write(f'  <li><a href=\"{name}\">{name}</a></li>\\n')
-        f.write("</ul>\n</body>\n</html>\n")
-    print(f\"Index generated: {index_path}\")
+            f.write(f'  <li><a href=\"{name}\">{name}</a></li>\\\\n')
+        f.write("</ul>\\n</body>\\n</html>\\n")
+    print(f"Index generated: {index_path}")
 def main() -> None:
     host = get_env("DATABRICKS_HOST")
     token = get_env("DATABRICKS_TOKEN")
