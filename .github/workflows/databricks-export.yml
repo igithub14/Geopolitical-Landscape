@@ -56,3 +56,5 @@ jobs:
         with:
           name: databricks-dashboards
           path: .github/scripts/exports/
+
+# ensure pages deploy steps present
