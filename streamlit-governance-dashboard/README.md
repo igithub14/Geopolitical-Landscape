@@ -2,15 +2,15 @@
 
 Interactive Streamlit dashboard analyzing Italian political stability and economic trends.
 
-## 🚀 Live Demo
+## Live Demo
 [View Dashboard](https://your-app.streamlit.app) _(coming soon)_
 
-## 📊 Features
+## Features
 - **Government Duration Analysis**: Historical Italian government stability (1946-2024)
 - **Industrial Composition**: OECD sectoral transformation (1985-2024)
 - **European GDP Trends**: Comparative analysis of major European economies
 
-## 🛠️ Deploy to Streamlit Cloud
+## Deploy to Streamlit Cloud
 
 ### Prerequisites
 - GitHub account
@@ -46,7 +46,7 @@ Interactive Streamlit dashboard analyzing Italian political stability and econom
    - After deployment, copy the URL (format: `https://your-app.streamlit.app`)
    - Share on LinkedIn!
 
-## 📁 Structure
+## Structure
 ```
 streamlit-governance-dashboard/
 ├── app.py                    # Main Streamlit application
@@ -59,14 +59,13 @@ streamlit-governance-dashboard/
 └── README.md
 ```
 
-## 📝 Data Sources
+## Data Sources
 - **OECD STAN Database**: Industrial composition data
 - **World Bank**: GDP statistics
 - **Italian Government Records**: Political stability metrics
 
-## 👤 Author
+## Author
 **Cristiano Mombello**
-- LinkedIn: [Your Profile](#)
 
-## 📄 License
+## License
 Data is publicly available. Dashboard code is MIT licensed.
