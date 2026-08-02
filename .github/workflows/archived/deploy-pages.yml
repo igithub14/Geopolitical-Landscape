@@ -1,0 +1,11 @@
+name: Archived deploy-pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Archived placeholder
+        run: echo "This workflow is archived and retained for history only."
