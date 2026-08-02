@@ -36,50 +36,36 @@ jobs:
           DATABRICKS_DASHBOARD_IDS: ${{ secrets.DATABRICKS_DASHBOARD_IDS }}
         run: |
           python .github/scripts/export_dashboards.py
-          echo
-          echo "=== Exports ==="
-          ls -la .github/scripts/exports || true
-          echo
-          echo "=== Docs (before copy) ==="
-          ls -la ./docs || true
         shell: bash
 
-      - name: Prepare docs for Pages
+      - name: Prepare docs for Pages (copy index if needed)
         run: |
           rm -rf ./docs
           mkdir -p ./docs
-          # copia tutti gli HTML esportati in ./docs
+          # copia tutti gli HTML esportati in ./docs (opzionale, non necessario se pubblichi exports direttamente)
           cp -v .github/scripts/exports/*.html ./docs/ || true
-          echo
-          echo "=== Docs (after copy) ==="
+          # assicurati che index.html sia in ./docs
+          if [ -f ".github/scripts/exports/index.html" ]; then
+            cp -v .github/scripts/exports/index.html ./docs/index.html
+          fi
+          echo "==== ./github/scripts/exports (content) ===="
+          ls -la .github/scripts/exports || true
+          echo "==== ./docs (content) ===="
           ls -la ./docs || true
         shell: bash
 
-      - name: Debug: list exports and tar contents
+      - name: Debug: show summary sizes (before upload)
         run: |
-          echo "=== Exports ==="
-          ls -la .github/scripts/exports || true
-          echo
-          echo "=== Docs ==="
-          ls -la ./docs || true
-          echo
-          echo "=== Prepare debug tar ==="
-          TMPDIR="$RUNNER_TEMP/debug_for_pages"
-          rm -rf "$TMPDIR"
-          mkdir -p "$TMPDIR"
-          cp -r .github/scripts/exports/* "$TMPDIR" 2>/dev/null || true
-          tar -cvf "$RUNNER_TEMP/debug_pages.tar" -C "$RUNNER_TEMP" debug_for_pages 2>/dev/null || true
-          echo
-          echo "=== Tar contents ==="
-          tar -tvf "$RUNNER_TEMP/debug_pages.tar" 2>/dev/null || echo "(no tar contents)"
-          echo
-          echo "=== Tar sha256 ==="
-          sha256sum "$RUNNER_TEMP/debug_pages.tar" 2>/dev/null || echo "(no sha256)"
+          echo "=== sizes in .github/scripts/exports ==="
+          du -sh .github/scripts/exports || true
+          echo "=== list files (with sizes) ==="
+          find .github/scripts/exports -maxdepth 1 -type f -exec ls -lh {} \; || true
         shell: bash
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # PUBLISH the actual exports directory (contiene index.html + assets)
           path: .github/scripts/exports
 
       - name: Deploy to GitHub Pages
