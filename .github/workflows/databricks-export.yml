@@ -3,7 +3,7 @@ name: Export Databricks dashboards and publish to GitHub Pages
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'   # every hour
+    - cron: '0 * * * *'   # ogni ora, cambia se preferisci
 
 permissions:
   contents: read
@@ -30,16 +30,23 @@ jobs:
         env:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
-          DATABRICKS_DASHBOARD_URLS: ${{ secrets.DATABRICKS_DASHBOARD_URLS }}
+          DATABRICKS_DASHBOARD_IDS: ${{ secrets.DATABRICKS_DASHBOARD_IDS }}
         run: |
-          mkdir -p ./docs
-          python .github/scripts/export_dashboards.py --out ./docs
+          # lo script scrive in .github/scripts/exports/
+          python .github/scripts/export_dashboards.py
 
-      - name: Upload artifact
+      - name: Prepare docs for Pages
+        run: |
+          rm -rf ./docs
+          mkdir -p ./docs
+          # copia tutti gli HTML esportati in ./docs
+          cp -v .github/scripts/exports/*.html ./docs/ || true
+
+      - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs
 
-      - name: Deploy to Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
