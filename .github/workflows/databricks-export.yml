@@ -38,17 +38,25 @@ jobs:
           python .github/scripts/export_dashboards.py
         shell: bash
 
-      - name: Prepare docs for Pages (copy index if needed)
+      - name: Prepare docs for Pages (copy index and set base)
         run: |
           rm -rf ./docs
           mkdir -p ./docs
-          # copia tutti gli HTML esportati in ./docs (opzionale, non necessario se pubblichi exports direttamente)
+          # copy all exported HTML into ./docs (keeps original exports as backup)
           cp -v .github/scripts/exports/*.html ./docs/ || true
-          # assicurati che index.html sia in ./docs
+          # ensure index.html is present in ./docs
           if [ -f ".github/scripts/exports/index.html" ]; then
             cp -v .github/scripts/exports/index.html ./docs/index.html
           fi
-          echo "==== ./github/scripts/exports (content) ===="
+          # Insert <base href="/owner/repo/"> so absolute root paths work on repo pages
+          repo="${GITHUB_REPOSITORY#*/}"
+          if [ -f "./docs/index.html" ]; then
+            sed -i "0,/<head>/s//<head>\n<base href=\"\/${repo}\/\">/" ./docs/index.html || true
+            echo "Inserted base href into ./docs/index.html"
+          else
+            echo "No ./docs/index.html to patch"
+          fi
+          echo "==== .github/scripts/exports (content) ===="
           ls -la .github/scripts/exports || true
           echo "==== ./docs (content) ===="
           ls -la ./docs || true
@@ -58,15 +66,19 @@ jobs:
         run: |
           echo "=== sizes in .github/scripts/exports ==="
           du -sh .github/scripts/exports || true
-          echo "=== list files (with sizes) ==="
+          echo "=== list files in .github/scripts/exports (with sizes) ==="
           find .github/scripts/exports -maxdepth 1 -type f -exec ls -lh {} \; || true
+          echo "=== sizes in ./docs ==="
+          du -sh ./docs || true
+          echo "=== list files in ./docs (with sizes) ==="
+          find ./docs -maxdepth 1 -type f -exec ls -lh {} \; || true
         shell: bash
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # PUBLISH the actual exports directory (contiene index.html + assets)
-          path: .github/scripts/exports
+          # Publish the prepared ./docs directory (contains patched index.html + assets)
+          path: ./docs
 
       - name: Deploy to GitHub Pages
         id: deployment
