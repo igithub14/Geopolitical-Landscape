@@ -111,7 +111,7 @@ Geopolitical-Landscape/
 
 ---
 
-## 🛡️ Automated Backup System
+## Automated Backup System
 
 **Daily Safety Backup** - Automated Git commit and push at 23:00 (Europe/Rome)
 
